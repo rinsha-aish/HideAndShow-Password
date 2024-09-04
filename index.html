@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HideAndShow</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form id="form">
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" required /><br /><br />
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required /><br /><br />
+
+        <label for="password">Password:</label>
+        <div class="input-box">
+          <input
+            type="password"
+            placeholder="Password"
+            id="password"
+            pattern="(?=.*\d)(?=.*[a-zA-Z])(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,}"
+            title="Password must be at least 6 characters long, include at least one letter, one number, and one special character."
+            required
+          />
+          <img src="eye-close.png" id="eyeIcon" />
+        </div>
+        <br /><br />
+
+        <label for="phone">Phone:</label>
+        <input
+          type="tel"
+          name="phone"
+          id="phone"
+          pattern="\d{10}"
+          title="Phone number must be exactly 10 digits."
+          required
+        /><br /><br />
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" name="dob" id="dob" required /><br /><br />
+
+        <button type="submit" class="btn">Submit</button>
+      </form>
+
+      <div class="popup" id="popup">
+        <img src="tick.png" alt="" />
+        <h2>Thank You!</h2>
+        <p>Your details have been successfully submitted. Thanks!</p>
+        <button type="button" onclick="closePopup()">OK</button>
+      </div>
+    </div>
+
+    <script>
+      //dob
+      const dobInput = document.getElementById("dob");
+      const today = new Date().toISOString().split("T")[0];
+      dobInput.setAttribute("max", today);
+
+      //password hide and show
+      let eyeIcon = document.getElementById("eyeIcon");
+      let password = document.getElementById("password");
+
+      eyeIcon.onclick = function () {
+        if (password.type === "password") {
+          password.type = "text";
+          eyeIcon.src = "eye-open.png";
+        } else {
+          password.type = "password";
+          eyeIcon.src = "eye-close.png";
+        }
+      };
+
+      //popup
+      let popup = document.getElementById("popup");
+      let form = document.getElementById("form");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        openPopup();
+      });
+
+      function openPopup() {
+        popup.classList.add("open-popup");
+      }
+
+      function closePopup() {
+        popup.classList.remove("open-popup");
+      }
+    </script>
+  </body>
+</html>

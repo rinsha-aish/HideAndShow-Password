@@ -1,0 +1,198 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background: #d5edc9;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  background: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+label {
+  color: #333;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+.input-box input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.input-box {
+  position: relative;
+}
+
+.input-box input {
+  padding-right: 40px;
+}
+
+.input-box img {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  cursor: pointer;
+}
+
+.btn {
+  padding: 15px;
+  background: #054f11;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+  width: 100%;
+}
+
+.btn:hover {
+  background: #16a130;
+}
+
+.popup {
+  width: 100%;
+  max-width: 400px;
+  background: #ffffff;
+  border-radius: 10px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  text-align: center;
+  padding: 30px;
+  color: #333;
+  visibility: hidden;
+  transition: transform 0.4s, visibility 0.4s;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.open-popup {
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.popup img {
+  width: 80px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.popup h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.popup p {
+  font-size: 16px;
+  margin-bottom: 30px;
+  color: #7f8c8d;
+}
+
+.popup button {
+  padding: 10px 20px;
+  background: #2ecc71;
+  color: #ffffff;
+  border: 0;
+  outline: none;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.popup button:hover {
+  background: #27ae60;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+    box-shadow: none;
+  }
+
+  form {
+    padding: 15px;
+  }
+
+  .btn {
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  .popup {
+    width: 90%;
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  label {
+    font-size: 14px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="date"],
+  .input-box input {
+    font-size: 14px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .popup h2 {
+    font-size: 24px;
+  }
+
+  .popup p {
+    font-size: 14px;
+  }
+
+  .popup button {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+}
